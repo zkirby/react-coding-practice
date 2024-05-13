@@ -1,0 +1,24 @@
+.thl__container {
+    margin-top: 100px;
+}
+
+.thl__selection {
+    position: absolute;
+    opacity: 0.3;
+}
+
+.thl__color-popup {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border: 1px solid black;
+    width: fit-content;
+    background-color: white;
+}
+
+.thl__color-popup button {
+    height: var(--btn-height);
+    width: fit-content;
+    background-color: white;
+    border: 1px solid;
+}
