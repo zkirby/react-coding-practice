@@ -1,0 +1,26 @@
+.slider__container {
+    --slider-height: 40px;
+
+    width: var(--slider-width);
+    height: var(--slider-height);
+    border: 1px solid #0e1111;
+    display: flex;
+    align-items: center;
+
+    /* Ensure that the offset is accounted for */
+    position: relative;
+    left: 200px;
+}
+
+.slider__right-fill {
+    height: 100%;
+    width: var(--slider-width);
+    background-color: aquamarine;
+}
+
+.slider__drag-bar {
+    height: calc(var(--slider-height) + 20px);
+    width: 8px;
+    background-color: crimson;
+    cursor: grab;
+}

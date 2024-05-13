@@ -12,6 +12,6 @@ A slider component consists of the following requirements:
 
 - [ ] The initial fill section can be set with a `percentFull` prop that is an integer from 0-100 representing the percent full the slider should be.
 
-### Bonus
-
 - [ ] Slider width should be able to be set dynamically.
+
+- [ ] Slider should be able to be placed anywhere in the viewport.
