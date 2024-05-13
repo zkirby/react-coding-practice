@@ -1,0 +1,48 @@
+.sae__container {
+    display: flex;
+}
+
+.sae__left-sidebar {
+    flex-shrink: 0;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100vh;
+    row-gap: 8px;
+}
+
+.sae__left-sidebar__job {
+    background-color: transparent;
+    padding: 8px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.sae__left-sidebar__job:hover, 
+.sae__left-sidebar__job.selected {
+    opacity: 1;
+}
+
+.sae__left-sidebar__job h3,
+.sae__left-sidebar__job h2 {
+    margin: 0;
+}
+
+.sae__left-sidebar__job__title {
+    margin-bottom: 12px;
+}
+
+.sae__left-sidebar__job__description {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sae__job-panel__container {
+    padding: 12px 32px 0px 32px;
+}
