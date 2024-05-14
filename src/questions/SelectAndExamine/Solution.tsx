@@ -54,8 +54,8 @@ export default function SelectAndExamine() {
 
 function SelectAndExaminePanel({ id }: { id: number }) {
   const [job, setJob] = useState<Job | null>(null);
-
   const [loading, setLoading] = useState(false);
+  // Ensure only the most recent data is displayed
   const counter = useRef(0);
 
   useEffect(() => {
@@ -64,7 +64,6 @@ function SelectAndExaminePanel({ id }: { id: number }) {
       const position = counter.current;
 
       setLoading(true);
-
       const job = await api.jobDescription(id);
 
       if (position >= counter.current) {
