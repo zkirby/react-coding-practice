@@ -1,5 +1,4 @@
-// Simulate an API call delay
-const sleep = (ms: number) => new Promise((res) => setTimeout(res, ms));
+import { sleep } from "../../utils";
 
 export interface Job {
   id: number;
@@ -156,7 +155,6 @@ export default {
     }));
   },
   async jobDescription(id: number): Promise<Job | undefined> {
-    console.log(id);
     await sleep(2000);
     return JOBS.find((j) => j.id === id);
   },

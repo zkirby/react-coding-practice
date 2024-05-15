@@ -9,4 +9,4 @@ Goal: 3/75
 ideas:
 
 - infinite window panes (infinite scroll + virtualization)
-- image carousel of some sort
+- image carousel button options of some sort
