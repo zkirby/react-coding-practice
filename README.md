@@ -4,9 +4,8 @@ Practice Questions to help you study for FE Coding interviews. Try to complete e
 
 Contributions welcome.
 
-Goal: 3/75
+Goal: 5/75
 
 ideas:
 
 - infinite window panes (infinite scroll + virtualization)
-- image carousel button options of some sort
