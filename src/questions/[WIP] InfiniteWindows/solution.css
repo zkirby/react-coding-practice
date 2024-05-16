@@ -1,0 +1,25 @@
+.iw__container {
+    --window-height: 30px;
+
+    height: calc(10 * var(--window-height));
+    width: 100px;
+    overflow: scroll;
+}
+
+.iw__area {
+    height: calc(10 * var(--window-height));
+    position: relative;
+}
+
+.iw__window {
+    height: var(--window-height);
+    text-align: center;
+}
+
+.iw__sentinel {
+    position: absolute;
+    top: 50%;
+    height: var(--window-height);
+    width: 100%;
+    background-color: red;
+}
