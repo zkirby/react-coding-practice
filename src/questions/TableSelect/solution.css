@@ -1,0 +1,21 @@
+.ts__container {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+}
+
+.ts__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.ts__form label span {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.ts__form button[type="submit"] {
+    width: fit-content;
+}
+

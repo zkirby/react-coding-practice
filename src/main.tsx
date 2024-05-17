@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom/client";
-import InfiniteWindow from "./questions/InfiniteWindows/Solution";
+import TableSelect from "./questions/TableSelect/Solution";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   // -----------------------------------------
   // ------ TEST SOLUTIONS HERE --------------
   // -----------------------------------------
-  <InfiniteWindow />
+  <TableSelect />
 );

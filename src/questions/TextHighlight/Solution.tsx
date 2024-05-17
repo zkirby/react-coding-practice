@@ -12,6 +12,7 @@ const COLOR_BUTTON_SPACING = 8;
 interface Selection {
   color: (typeof COLORS)[number];
   rect: DOMRect;
+  text: string;
 }
 
 export default function TextHighlight({ text }: TextHighlightProps) {
@@ -34,7 +35,7 @@ export default function TextHighlight({ text }: TextHighlightProps) {
 
     setSelections((s) => [
       ...s,
-      ...clientRects.map((rect) => ({ color, rect })),
+      ...clientRects.map((rect) => ({ color, rect, text: range!.toString() })),
     ]);
 
     setPopupPos(null);
@@ -61,15 +62,16 @@ export default function TextHighlight({ text }: TextHighlightProps) {
               key={c}
               onClick={handleColorSelect}
               style={{ color: c, borderColor: c }}
+              type="button"
             >
               {c}
             </button>
           ))}
         </div>
       )}
-      <div onMouseUp={handleSelect}>{text}</div>
+      <p onMouseUp={handleSelect}>{text}</p>
       {selections.map((s) => (
-        <div
+        <mark
           className="thl__selection"
           style={{
             backgroundColor: s.color,
@@ -78,7 +80,9 @@ export default function TextHighlight({ text }: TextHighlightProps) {
             width: s.rect.width,
             height: s.rect.height,
           }}
-        ></div>
+        >
+          <span hidden>{s.text}</span>
+        </mark>
       ))}
     </div>
   );
