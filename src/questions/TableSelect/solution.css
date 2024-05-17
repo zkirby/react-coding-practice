@@ -19,3 +19,8 @@
     width: fit-content;
 }
 
+.ts__delete-button {
+    border: 1px solid red;
+    color: red;
+}
+

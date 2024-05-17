@@ -1,0 +1,63 @@
+.sw__container {
+    display: flex;
+    align-items: center;
+    width: 330px;
+    justify-content: space-between;
+}
+
+.sw__watches {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sw__clock {
+    height: 100px;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    border: 1px solid black;
+    display: flex;
+    place-content: center;
+}
+
+.sw__clock div {
+    transform-origin: bottom;
+    height: 50px;
+    width: 4px;
+    background-color: red;
+    transform: rotateZ(100deg);
+}
+
+.sw__clock.small {
+    height: 60px;
+}
+
+.sw__clock.small div {
+    height: 30px;
+    width: 2px;
+}
+
+.sw__clock__container {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.sw__controls {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.sw__controls button {
+    height: 30px;
+    width: 100px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.sw__controls__reset-button {
+    color: red;
+    border: 1px solid red;
+}

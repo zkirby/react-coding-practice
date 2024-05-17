@@ -54,7 +54,11 @@ export default function TableSelect() {
     <div className="ts__container">
       <div className="ts__left-panel">
         {anyToDelete && (
-          <button onClick={deletedChecked} type="button">
+          <button
+            className="ts__delete-button"
+            onClick={deletedChecked}
+            type="button"
+          >
             Delete {allChecked ? "All" : ""}
           </button>
         )}
