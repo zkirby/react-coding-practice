@@ -1,0 +1,30 @@
+.ms__game-area {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-dim), 1fr);
+    grid-template-rows: repeat(var(--grid-dim), 1fr);
+    max-width: fit-content;
+}
+
+.ms__game-area button {
+    height: 40px;
+    aspect-ratio: 1 / 1;
+}
+
+.ms__tile.ms__hidden-tile {
+    background-color: lightgray;
+}
+
+.ms__tile.ms__blank-tile {
+    background-color: white;
+    color: white;
+}
+
+.ms__tile.ms__bomb-tile {
+    background-color: black;
+    color: red;
+}
+
+.ms__tile {
+    color: blue;
+    border: 1px solid black;
+}
