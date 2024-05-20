@@ -2,7 +2,7 @@
 
 ![tableselect](./tableselect.png)
 
-Build a table where rows can be bulk selected.
+Build a table where rows can be bulk deleted.
 
 A bulk select table component consists of the following requirements:
 
