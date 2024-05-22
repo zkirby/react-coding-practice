@@ -5,8 +5,8 @@ const clsx = (...args: (string | boolean)[]) => args.filter(Boolean).join(" ");
 
 interface CalendarEvent {
   id: number;
-  start: number;
-  end: number;
+  start: string;
+  end: string;
   name: string;
 }
 
@@ -18,15 +18,14 @@ const DEFAULT_FORM_STATE = {
 
 export default function CalendarEvents() {
   const [formData, setFormData] = useState(DEFAULT_FORM_STATE);
-  const [selectedEventId, setSelectedEventId] = useState(null);
+  const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const id = useRef(0);
 
-  const updateFormValue = (value, key) =>
+  const updateFormValue = (value: string, key: string) =>
     setFormData((f) => ({ ...f, [key]: value }));
 
   const addOrEditEvent = () => {
-    console.log(formData);
     if (selectedEventId) {
       setEvents((evts) => {
         return [
@@ -42,8 +41,8 @@ export default function CalendarEvents() {
         {
           id: id.current,
           name: formData.name,
-          start: parseInt(formData.start),
-          end: parseInt(formData.end),
+          start: formData.start,
+          end: formData.end,
         },
       ]);
     }
@@ -51,7 +50,7 @@ export default function CalendarEvents() {
     setFormData(DEFAULT_FORM_STATE);
   };
 
-  const editEvent = (event) => {
+  const editEvent = (event: CalendarEvent) => {
     setSelectedEventId(event.id);
     setFormData(event);
   };
@@ -64,7 +63,9 @@ export default function CalendarEvents() {
             <div className="ce__calendar-body__cell" key={key}>
               {key}
               {events.map((e) => {
-                if (e.start <= key && e.end >= key) {
+                const start = parseInt(e.start);
+                const end = parseInt(e.end);
+                if (start <= key && end >= key) {
                   return (
                     <div
                       onClick={() => {
@@ -72,11 +73,11 @@ export default function CalendarEvents() {
                       }}
                       className={clsx(
                         "ce__calendar-body__cell-event__all-day",
-                        e.start === key && "left-end",
-                        e.end === key && "right-end"
+                        start === key && "left-end",
+                        end === key && "right-end"
                       )}
                     >
-                      {e.start === key && e.name}
+                      {start === key && e.name}
                     </div>
                   );
                 }
