@@ -4,9 +4,12 @@ import {
   useRef,
   useState,
   PropsWithChildren,
+  FormEvent,
 } from "react";
-import "./solution.css";
+
 import Websocket from "./WebSocket";
+
+import "./solution.css";
 
 export default function Chat() {
   const [messages, setMessages] = useState<{ id: number; text: string }[]>([]);
@@ -30,15 +33,23 @@ export default function Chat() {
       {/* Messages */}
       <Loading loading={loading}>
         <div className="chat__message-container">
-          {messages.map((m) => (
-            <div key={m.id}>{m.text}</div>
+          {messages.map((m, i) => (
+            <div
+              className={cns(
+                "chat__message-body",
+                i % 2 === 0 ? "left" : "right"
+              )}
+              key={m.id}
+            >
+              {m.text}
+            </div>
           ))}
         </div>
       </Loading>
 
       {/* Input */}
       <form
-        onSubmit={(e) => {
+        onSubmit={(e: FormEvent<HTMLFormElement>) => {
           e.preventDefault();
 
           const form = new FormData(e.currentTarget);
@@ -48,7 +59,7 @@ export default function Chat() {
         }}
       >
         <input
-          type="textarea"
+          type="text"
           aria-label="input message to send"
           name="send-message"
           disabled={loading}
@@ -57,6 +68,9 @@ export default function Chat() {
     </div>
   );
 }
+
+/** create classnames string */
+const cns = (...args: string[]) => args.join(" ");
 
 /** if loading: show spinner else: show children */
 const Loading = ({
