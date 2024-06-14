@@ -21,8 +21,7 @@ export default function Chat() {
           const curr = m.findIndex((os) => os.id === s.id);
           return curr === -1
             ? [...m, s]
-            : // @ts-expect-error fix config
-              m.with(curr, { id: s.id, text: m[curr].text + s.text });
+            : m.with(curr, { id: s.id, text: m[curr].text + s.text });
         }),
       []
     ),
