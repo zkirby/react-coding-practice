@@ -1,0 +1,40 @@
+.sp__pie-chart {
+    display: flex;
+
+    & .sp__pie-chart__stock {
+        border: none;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: 0.2s;
+
+        &.selected {
+            opacity: 1;
+        }
+    }
+}
+
+.sp__breakdown {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    & .sp__breakdown__stock {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        opacity: 0.6;
+        transition: 0.2s;
+
+        background-color: transparent;
+        border: none;
+        align-items: first;
+
+        &.selected {
+            opacity: 1;
+        }
+
+        & > div:first-child {
+            margin-right: 20px;
+        }
+    }
+}

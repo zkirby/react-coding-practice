@@ -34,11 +34,7 @@ const Table = memo(
     const updateRow = (
       value: string,
       { rowId, colId }: { rowId: number; colId: number }
-    ) =>
-      update((rows) =>
-        /// @ts-expect-error Need to update config for new language features
-        rows.with(rowId, rows[rowId].with(colId, value))
-      );
+    ) => update((rows) => rows.with(rowId, rows[rowId].with(colId, value)));
 
     return (
       <table>

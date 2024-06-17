@@ -181,7 +181,6 @@ export default function Minesweeper({
 
   const handleFlag = useCallback((cellId: number) => {
     setVisibleTiles((t) =>
-      // @ts-expect-error config issue with the new `with` syntax
       t.with(cellId, t[cellId] === TILES.FLAG ? TILES.HIDDEN : TILES.FLAG)
     );
   }, []);
