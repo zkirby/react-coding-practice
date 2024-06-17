@@ -34,6 +34,7 @@ export default function StockPortfolio({ stocks }: StockPortfolioProps) {
 
   return (
     <div className="sp__wrapper">
+      <div className="pie-chart"></div>
       <PieChart
         stocks={stocks}
         selected={selectedStock}

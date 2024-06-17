@@ -38,3 +38,17 @@
         }
     }
 }
+
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: conic-gradient(
+      red 0% 20%, 
+      blue 20% 40%, 
+      yellow 40% 50%, 
+      green 50% 70%, 
+      purple 70% 90%, 
+      orange 90% 100%
+    );
+  }
