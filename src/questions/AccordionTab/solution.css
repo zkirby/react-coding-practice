@@ -1,0 +1,43 @@
+.at__title__button {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    & div:first-child {
+        margin-right: 5px;
+        transition: 0.2s;
+    }
+
+    &[data-open="true"] div:first-child{
+        transform: rotateZ(90deg);
+    }
+}
+
+.at__tabs__title-list {
+    margin-bottom: 10px;
+
+    & button {
+        background-color: transparent;
+        border: none;
+        font-weight: bold;
+        border-bottom: 2px solid black;
+        opacity: 0.6;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &:not(:last-child) {
+            border-right: 2px solid black;
+        }
+
+        &[data-active="true"] {
+            opacity: 1;
+        }
+    }
+}

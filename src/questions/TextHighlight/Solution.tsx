@@ -26,8 +26,8 @@ export default function TextHighlight({ text }: TextHighlightProps) {
     setPopupPos(range?.getBoundingClientRect() ?? null);
   };
 
-  const handleColorSelect = (e: React.MouseEvent<HTMLElement>) => {
-    const color = e.target.innerText;
+  const handleColorSelect = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const color = e.currentTarget.innerText as (typeof COLORS)[number];
 
     const selection = window.getSelection();
     const range = selection?.getRangeAt(0);

@@ -1,0 +1,26 @@
+.dropdown {
+    border: 1px solid rgb(0, 0, 0, 0.2);
+    width: fit-content;
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    &[data-hidden="true"] {
+        display: none;
+    }
+
+    & div {
+        padding: 10px;
+    }
+
+    & div[data-selectable="true"] {
+        cursor: pointer;
+    }
+
+    & div:not(:last-child) {
+        border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+    }
+}
+
